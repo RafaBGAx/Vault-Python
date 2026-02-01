@@ -15,6 +15,12 @@ By using a unique salt per user, the system remains resilient against rainbow ta
 - tests.py: Unit tests to validate hash uniqueness and verification logic.
 - requirements.txt: List of dependencies (none required for this version).
 
+## CI/CD Integration
+This repository includes a GitHub Actions pipeline (`.github/workflows/pipeline.yml`). 
+On every push, the workflow automatically:
+1. Sets up a Python environment.
+2. Executes the `tests.py` suite to verify that any code changes maintain the integrity of the hashing and salting logic.
+
 ## Usage
 Run the main script to see the hashing in action:
 python vault.py
