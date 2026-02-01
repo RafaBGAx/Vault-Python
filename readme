@@ -1,0 +1,24 @@
+# Python Secure Vault
+
+A script to demonstrate password hashing and verification using SHA-256 and unique salts.
+
+## Technical Approach
+This project implements a defense-in-depth strategy for credential storage. Instead of storing passwords in plaintext, the system:
+1. Generates a 16-byte random salt using `os.urandom`.
+2. Concatenates the salt with the raw password.
+3. Produces a SHA-256 hash of the combined string.
+
+By using a unique salt per user, the system remains resilient against rainbow table attacks, ensuring that identical passwords result in different hashes.
+
+## Project Structure
+- vault.py: Core logic containing the hashing and verification functions.
+- tests.py: Unit tests to validate hash uniqueness and verification logic.
+- requirements.txt: List of dependencies (none required for this version).
+
+## Usage
+Run the main script to see the hashing in action:
+python vault.py
+
+## Running Tests
+To verify the security logic:
+python tests.py
